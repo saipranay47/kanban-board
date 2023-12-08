@@ -1,0 +1,90 @@
+.card{
+    height: 100%;
+    width: 410px;
+    background-color: #fff;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #DFE1E4;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+@media screen and (max-width: 450px) {
+    .card{
+        width: 100%;
+    }
+}
+
+.card_top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.id{
+    font-size: 16px;
+    font-weight: 400;
+    color: #6A6F77;
+}
+.user{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.user img{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.dot{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #BDC2C9;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 1px solid #fff;
+    box-sizing: content-box;
+}
+
+.title{
+    font-size: 16px;
+    font-weight: 500;
+    color: #282A31;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+.tags{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+.tag{
+    border: 1px solid #EBEDF0;
+    padding: 6px 4px;
+    font-size: 14px;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    color: #666B73;
+}
+
+.circle{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #BDC2C9;
+    margin-right: 4px;
+}
