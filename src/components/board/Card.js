@@ -1,29 +1,62 @@
 import React from "react";
 import "../../styles/Card.css";
-import { UrgentIcon, MediumIcon, HighIcon, LowIcon, DotsIcon } from "../Icons";
+import {
+  UrgentIcon,
+  MediumIcon,
+  HighIcon,
+  LowIcon,
+  DotsIcon,
+  TodoIcon,
+  CancelIcon,
+  DotedCircleIcon,
+  ProgressIcon,
+  CompletedIcon,
+} from "../Icons";
 function Card({ task }) {
-  let Icon;
+  let PriorityIcon;
 
   switch (task.priority) {
     case 0:
-      Icon = <DotsIcon />;
+      PriorityIcon = <DotsIcon />;
       break;
     case 1:
-      Icon = <LowIcon />;
+      PriorityIcon = <LowIcon />;
       break;
     case 2:
-      Icon = <MediumIcon />;
+      PriorityIcon = <MediumIcon />;
       break;
     case 3:
-      Icon = <HighIcon />;
+      PriorityIcon = <HighIcon />;
       break;
     case 4:
-      Icon = <UrgentIcon />;
+      PriorityIcon = <UrgentIcon />;
       break;
     default:
-      Icon = <DotsIcon />;
       break;
   }
+
+  let StatusIcon;
+
+  switch (task.status) {
+    case "Todo":
+      StatusIcon = <TodoIcon />;
+      break;
+    case "In progress":
+      StatusIcon = <ProgressIcon />;
+      break;
+    case "Completed":
+      StatusIcon = <CompletedIcon />;
+      break;
+    case "Cancelled":
+      StatusIcon = <CancelIcon />;
+      break;
+    case "Backlog":
+      StatusIcon = <DotedCircleIcon />;
+      break;
+    default:
+      break;
+  }
+
   return (
     <div className="card">
       <div className="card_top">
@@ -33,9 +66,12 @@ function Card({ task }) {
           <div className="dot"></div>
         </div>
       </div>
-      <p className="title">{task.title}</p>
+      <div className="task">
+        {StatusIcon}
+        <p className="title">{task.title}</p>
+      </div>
       <div className="tags">
-        <button className="priority tag">{Icon}</button>
+        <button className="priority tag">{PriorityIcon}</button>
         {task.tag.map((tag, index) => (
           <button className="tag" key={index}>
             {" "}

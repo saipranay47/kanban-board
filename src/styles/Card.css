@@ -53,12 +53,21 @@
     box-sizing: content-box;
 }
 
+.task{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+.task svg {
+    scale: 1.2;
+}
+
 .title{
     font-size: 16px;
     font-weight: 500;
     color: #282A31;
-    margin-top: 4px;
-    margin-bottom: 8px;
 }
 
 .tags{
