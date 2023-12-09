@@ -9,10 +9,15 @@
     margin-bottom: 16px;
 }
 
-.col_title_container h3{
+.title_type h3{
     font-size: 16px;
     font-weight: 500;
     color: #000;
+}
+.title_type p{
+    font-size: 16px;
+    font-weight: 500;
+    color: #282A31;
 }
 
 .title_type{
@@ -20,6 +25,7 @@
     align-items: center;
     gap: 16px;
 }
+
 
 .options{
     display: flex;

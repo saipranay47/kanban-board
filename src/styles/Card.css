@@ -53,6 +53,10 @@
     box-sizing: content-box;
 }
 
+.available{
+    background: #00FF38;
+}
+
 .task{
     display: flex;
     align-items: start;

@@ -1,7 +1,7 @@
 import React from "react";
 import Column from "./Column";
 
-const TaskList = ({ tasks, groupingOption, sortOption }) => {
+const TaskList = ({ tasks, users, groupingOption, sortOption }) => {
   const groupTasks = () => {
     const groupedTasks = {};
 
@@ -40,6 +40,7 @@ const TaskList = ({ tasks, groupingOption, sortOption }) => {
         title={key}
         groupby={groupingOption}
         cards={sortTasks(groupedTasks[key])}
+        users = {users}
       />
     ));
   };

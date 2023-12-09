@@ -2,18 +2,21 @@
 import React, { useState, useEffect } from "react";
 import Dropdown from "../Dropdown";
 import TaskList from "./TaskList";
-import { fetchData } from "../../utils/api.js";
+import { fetchData, fetchUsers } from "../../utils/api.js";
 import "../../styles/Board.css";
 
 const Board = () => {
   const [tasks, setTasks] = useState([]);
+  const [users, setUsers] = useState([]); 
   const [groupingOption, setGroupingOption] = useState("status");
   const [sortOption, setSortOption] = useState(null);
 
   useEffect(() => {
     const fetchDataAndSetState = async () => {
       const data = await fetchData();
+      const userData = await fetchUsers();
       setTasks(data);
+      setUsers(userData);
 
       const savedState = loadViewStateFromURL();
 
@@ -63,6 +66,7 @@ const Board = () => {
         tasks={tasks}
         groupingOption={groupingOption}
         sortOption={sortOption}
+        users={users}
       />
     </div>
   );

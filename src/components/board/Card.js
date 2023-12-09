@@ -12,6 +12,7 @@ import {
   ProgressIcon,
   CompletedIcon,
 } from "../Icons";
+import { useUsers } from "../../utils/UsersContext";
 function Card({ task }) {
   let PriorityIcon;
 
@@ -57,13 +58,22 @@ function Card({ task }) {
       break;
   }
 
+  const users = useUsers();
+
+  const getUserAvailability = (userId) => {
+    const user = users.find((user) => user.id === userId);
+    return user ? user.available : false;
+  };
+
+  const isUserAvailable = getUserAvailability(task.userId);
+
   return (
     <div className="card">
       <div className="card_top">
         <p className="id">{task.id}</p>
         <div className="user">
           <img src="https://i.pravatar.cc/300" alt={task.userId} />
-          <div className="dot"></div>
+          <div className={`dot ${isUserAvailable ? "available" : ""}`}></div>
         </div>
       </div>
       <div className="task">

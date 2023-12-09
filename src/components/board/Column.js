@@ -23,18 +23,23 @@ const Column = ({ title, cards, groupby }) => {
     switch (title) {
       case "0":
         Icon = <DotsIcon />;
+        title = "No priority"
         break;
       case "1":
         Icon = <LowIcon />;
+        title = "Low"
         break;
       case "2":
         Icon = <MediumIcon />;
+        title = "Medium "
         break;
       case "3":
         Icon = <HighIcon />;
+        title = "High "
         break;
       case "4":
         Icon = <UrgentIcon />;
+        title = "Urgent "
         break;
       default:
         break;
@@ -69,6 +74,7 @@ const Column = ({ title, cards, groupby }) => {
         <div className="title_type">
           {Icon}
           <h3>{title}</h3>
+          <p>{cards.length}</p>
         </div>
         <div className="options">
           <PlusIcon />
